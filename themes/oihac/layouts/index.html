@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<section class="home-teasers">
+    <div class="columns is-multiline is-gapless">
+
+        {{ range .Site.RegularPages }}
+
+        <div class="column is-full headlines is-size-3-mobile">
+                <a href="{{ .Permalink }}" title="{{ with .Params.title_short }}{{ . }}{{ else }}{{ .Title }}{{ end }}">
+                                {{ with .Params.title_short }}{{ . }}{{ else }}{{ .Title }}{{ end }}
+                </a>
+        </div>
+        {{ end }}
+
+    </div>
+</section>
+
+{{ end }}

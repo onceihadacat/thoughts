@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+
+$pixelFont: 'VT323', monospace;
+
+html {
+    font-family: "Courier New", Courier, monospace;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: black;
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: #33aaff;
+}
+
+.home-header {
+    background: url(/assets/images/header-image.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $pixelFont;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 4.5rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+.navbar {
+    font-family: $pixelFont;
+}

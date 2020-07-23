@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section>
+  <div class="container">
+    {{ partial "breadcrumb" . }}
+    <div class="columns">
+      <div class="column is-one-third">
+        {{ partial "sidebar" . }}
+      </div>
+      <div class="column">
+        <div id="article-body" class="col-sm-9 col-sm-push-3 doc">
+          {{ partial "article_header" . }}
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "body-end" }}
+<script type="text/javascript">
+  SidebarScroll.init()
+</script>
+{{ end }}

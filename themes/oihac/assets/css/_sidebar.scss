@@ -1,0 +1,13 @@
+.article-sidebar {
+    border: 2px dashed white;
+    padding: 1rem;
+    font-family: $pixelFont;
+    a {
+        font-size: 1.8rem;
+        color: #33ccff;
+    }
+
+    ul {
+        margin-left: 0.5rem;
+    }
+}

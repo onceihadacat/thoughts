@@ -1,0 +1,23 @@
+<div class="top-breadcrumb">
+  <nav class="breadcrumb has-bullet-separator is-centered" aria-label="breadcrumbs">
+    <ul>
+      {{ template "breadcrumb" (dict "p1" . "p2" .) }}
+    </ul>
+  </nav>
+</div>
+{{ define "breadcrumb" }}
+{{ if .p1.Parent }}
+{{ template "breadcrumb" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ else if not .p1.IsHome }}
+{{ template "breadcrumb" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+{{ end }}
+{{ if eq .p1 .p2 }}
+<li class="is-active">
+  <a href="#" aria-current="page">{{ .p1.Title }}</a>
+</li>
+{{ else }}
+<li>
+  <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+</li>
+{{ end }}
+{{ end }}

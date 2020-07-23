@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<section class="404">
+
+  <h1>404</h1>
+  <p>Meow! I can't find the page you are looking for my friend. But lets take a look at some posts.</p>
+
+</section>
+
+<section class="home-teasers">
+  <div class="columns is-multiline">
+
+      {{ range .Site.RegularPages }}
+
+      <div class="column is-4">
+          <div class="teaser-image-container">
+              <a href="{{ .Permalink }}" title="{{ with .Params.title_short }}{{ . }}{{ else }}{{ .Title }}{{ end }}">
+                  <article class="has-text-white news-teaser-item">
+                      <figure class="image is-5by3">
+                          {{ with .Params.image }}<img src="{{ . }}" />{{ end }}
+                          <div class="image-overlay"></div>
+                          <div class="image-labels has-text-centered is-size-3-mobile">
+                              {{ with .Params.title_short }}{{ . }}{{ else }}{{ .Title }}{{ end }}</div>
+                  </article>
+              </a>
+          </div>
+      </div>
+      {{ end }}
+
+  </div>
+</section>
+
+{{ end }}

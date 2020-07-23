@@ -1,0 +1,104 @@
+#article-body {
+    strong {
+        color: white;
+    }
+    h1, h2, h3 {
+        color: #ffff99;
+    }
+    p {
+
+        margin: 1rem 0;
+        &:nth-child(odd) {
+            color: #ff99ff;
+        }
+        &:nth-child(even) {
+            color: #66ff99;
+        }
+    }
+    a {
+        color: white !important;
+        text-decoration: underline;
+    }
+    ul {
+        margin: 1rem 0;
+        li {
+            &:nth-child(odd) {
+                color: #ff99ff;
+            }
+            &:nth-child(even) {
+                color: #66ff99;
+            }    
+        }
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.4rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #article-body p,
+    #article-body ul,
+    #article-body h2,
+    #article-body h3 {
+            padding: 0rem 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #article-body h1 {
+        font-size: 4rem;
+    }
+}
+#TableOfContents li {
+    border-bottom: 1px solid white;
+}
+
+#TableOfContents li:last-child {
+    border:none;
+}
+
+.articles-list .card-header-title {
+    font-size: 1.4rem;
+}
+
+.article-hero {
+    background-color: transparent !important;
+    border: 2px dashed white;
+    padding: 1rem;
+    font-family: $pixelFont;
+    margin-bottom: 2rem;
+    h1 {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+.article-list {
+    color: white;
+}
+
+.article-list li {
+    border-bottom: 1px solid white;
+    padding: 1rem;
+}
+
+.article-list li:last-child {
+    border:none;
+}
+.article-list a {
+    font-family: 'Futura PT', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.article-header {
+    margin-top: 1rem;
+}

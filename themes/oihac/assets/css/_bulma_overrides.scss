@@ -1,0 +1,49 @@
+.hero.is-primary {
+    background-color: blue;
+    color: #fff;
+}
+.hero.is-primary h1 {
+    font-size: 4rem;
+}
+
+.header-link {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.card-equal-height {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+ }
+ 
+ .card-equal-height .card-footer {
+    margin-top: auto;
+ }
+
+ pre {
+     background-color: transparent;
+ }
+
+html, body {
+     background-color: black;
+ }
+
+ .card-header {
+     box-shadow: none;
+ }
+
+ .breadcrumb {
+     white-space: normal;
+ }
+
+ p > code, li > code {
+    background-color: #112233;
+    border: 1px dashed #445566;
+    color: #f14668;
+    font-size: .875em;
+    font-weight: 400;
+    padding: .25em .5em .25em;
+ }

@@ -1,0 +1,20 @@
+{{ with .Pages }}
+{{ $filtered := where . "Params.hiddenguide" "!=" true }}
+
+<section class="home-teasers">
+    <div class="columns is-multiline is-gapless">
+
+        {{ $len := len . }}
+        {{ range $i, $article := $filtered }}
+
+        <div class="column is-full headlines is-size-3-mobile">
+            <a href="{{ .Permalink }}" title="{{ with .Params.title_short }}{{ . }}{{ else }}{{ .Title }}{{ end }}">
+                {{ with .Params.title_short }}{{ . }}{{ else }}{{ .Title }}{{ end }}
+            </a>
+        </div>
+        {{ end }}
+
+    </div>
+</section>
+
+{{ end }}

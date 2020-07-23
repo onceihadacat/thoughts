@@ -1,0 +1,89 @@
+.home-teasers {
+    margin: 1rem 0;
+    margin-bottom: 20rem;
+}
+
+.news-teaser-item {
+    position: relative;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.image-labels,
+.image-overlay {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.image-overlay {
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+}
+
+.image-labels {
+    padding: 1em 1em;
+    font-size: 2.5em;
+    margin: 0;
+    color: yellow;
+}
+
+.headlines {
+    font-size: 2.5em;
+    margin: 0;
+    color: yellow;
+    font-family: $pixelFont;
+
+    a {
+        color: yellow;
+    }
+    border-bottom: 2px solid white;
+}
+
+.image-labels,
+.image-overlay {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-family: $pixelFont;
+}
+
+.teaser-image-container {
+    overflow: hidden;
+}
+
+.teaser-image-container a {
+    -webkit-transition: color .11s ease-in-out;
+    transition: color .11s ease-in-out;
+}
+
+.teaser-image-container a:hover {
+    transform: scale(1.1);
+}
+
+.home-hero {
+    position: relative;
+    background-position: center center;
+    background-color: transparent;
+    background-image: url('/assets/images/oihac.jpg') !important;
+    background-size: cover;
+}
+
+.home-hero h1 {
+    font-size: 5rem;
+}
+
+.oihac-main,
+header {
+    padding: 0 .5rem;
+    overflow: hidden;
+    position: relative;
+}

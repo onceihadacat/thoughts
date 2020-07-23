@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ .Param "description" }}">
+  {{ with .Params.keywords }}
+  <meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">{{ end }}
+  {{ if .Params.no_index }}
+  <meta name="robots" content="noindex" />{{ end }}
+  <meta property="og:title" content="{{ .Params.og_title | default .Title }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:description" content="{{ .Params.og_description | default (.Param "description") }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta name="msvalidate.01" content="B0A4A9FBBDCFEB257EB993160FA09FBF" />
+  <meta name="google-site-verification" content="REgG4I-DhlS9raB6978SUzzOILfVU4j2HcReGanV0jM" />
+  {{ with .Params.image }}
+  {{ if eq (printf "%T" .) "string"}}
+  <meta property="og:image" content="{{ . | absURL }}">
+  {{ else }}
+  {{ with .file }}
+  <meta property="og:image" content="{{ . | absURL }}">{{ end }}
+  {{ with .width }}
+  <meta property="og:image:width" content="{{ . }}">{{ end }}
+  {{ with .height }}
+  <meta property="og:image:height" content="{{ . }}">{{ end }}
+  {{ end }}
+  {{ end }}
+  <meta name="twitter:site" content="@onceihadacat">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css">
+
+  {{ with  .Site.Home.OutputFormats.Get "rss" -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+  {{ end }}
+
+  {{ $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <link rel="canonical" href="{{ .Permalink | safeURL }}">
+  {{ range .AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+  {{ end -}}
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+</head>
+
+<body>
+
+  <header>
+    {{ partial "nav" . }}
+  </header>
+
+  <div id="main" class="oihac-main">
+    <div class="container is-fluid">
+      {{block "main" .}}{{ end }}
+    </div>
+  </div>
+
+  <footer>
+    {{ partial "footer" . }}
+  </footer>
+
+</body>
+
+</html>
